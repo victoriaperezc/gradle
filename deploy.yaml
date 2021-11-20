@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: react-service
-        image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
+        image: victoriaperez/deploy-react-kubernetes
         ports:
         - containerPort: 8080
 
