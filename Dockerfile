@@ -1,13 +1,14 @@
 FROM node:15
 
-# install simple http server for serving static content
 RUN npm install -g http-server
+                                                  
+WORKDIR /usr/src/app
 
-# make the 'app' folder the current working directory
-WORKDIR /usr/src/app/
-
-# copy both 'package.json' and 'package-lock.json' (if available)
 COPY package*.json ./
+
+RUN npm install 
+
+COPY . .
 
 # install project dependencies
 RUN yarn
