@@ -1,13 +1,9 @@
-FROM node:15
-                                                  
-WORKDIR /usr/src/app
+FROM node:10-alpine
 
-COPY package*.json ./
-
-RUN npm install 
-
-COPY . .
-
+RUN mkdir /app
+COPY COPY package*.json /app
+WORKDIR /app
+RUN npm install express
 EXPOSE 8080
 
-CMD [ "npm", "run", "start" ]
+CMD ["node", "index.js"]
