@@ -4,7 +4,7 @@ FROM node:lts-alpine
 RUN npm install -g http-server
 
 # make the 'app' folder the current working directory
-RUN mkdir /app
+RUN mkdir /usr/src/app/npm
 
 # copy both 'package.json' and 'package-lock.json' (if available)
 COPY package*.json ./
