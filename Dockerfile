@@ -1,12 +1,12 @@
 FROM node:15
-
-RUN npm install -g http-server
                                                   
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/
 
 COPY package*.json ./
 
 RUN npm install 
+
+RUN npm install -g http-server
 
 COPY . .
 
